@@ -50,7 +50,7 @@ struct SettingsView: View {
                         iconColor: Color(red: 0.95, green: 0.27, blue: 0.27),
                         title: "View App Code"
                     ) {
-                        openURL("https://github.com")
+                        openURL("https://github.com/MohamedJaber/RickyAndMorty")
                     }
                 }
             }
