@@ -6,8 +6,8 @@
 //
 
 struct LocationResponse: Codable {
-    let info: Info
     let results: [Location]
+    let info: Info
 }
 
 struct Info: Codable {
@@ -16,19 +16,19 @@ struct Info: Codable {
 }
 
 struct Location: Codable, Identifiable, Equatable, Sendable {
-    let id: Int
+    let residents: [String]
     let name: String
     let type: String
     let dimension: String
-    let residents: [String] // URLs of character endpoints
     let url: String
     let created: String
+    let id: Int
 }
 
 struct ResidentDisplay: Identifiable, Sendable {
-    let id: Int
     let name: String
     let originName: String
     let lastSeenName: String
     let image: String
+    let id: Int
 }

@@ -6,18 +6,18 @@
 //
 
 struct Episode: Codable, Identifiable, Hashable {
-    let id: Int
+    let characters: [String]
     let name: String
     let air_date: String
-    let episode: String 
-    let characters: [String]
+    let episode: String
     let url: String
     let created: String
+    let id: Int
 }
 
 struct EpisodeResponse: Codable {
-    let info: PageInfo
     let results: [Episode]
+    let info: PageInfo
 
     struct PageInfo: Codable {
         let pages: Int

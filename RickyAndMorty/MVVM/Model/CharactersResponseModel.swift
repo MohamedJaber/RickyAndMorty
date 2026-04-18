@@ -8,18 +8,18 @@
 import Foundation
 
 struct Character: Identifiable, Equatable, Hashable, Sendable {
-    let id: Int
+    let episode: [String]
+    let origin: NamedResource
+    let location: NamedResource
     let name: String
     let status: String
     let species: String
     let type: String
     let gender: String
-    let origin: NamedResource
-    let location: NamedResource
     let image: String
-    let episode: [String]
     let url: String
     let created: String
+    let id: Int
 
     struct NamedResource: Codable, Equatable, Hashable {
         let name: String
