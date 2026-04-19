@@ -30,6 +30,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		295BC71B2F95802100AC5905 /* Exceptions for "RickyAndMorty" folder in "RickyAndMorty" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 29A3740C2F796AEF0046F266 /* RickyAndMorty */;
+		};
 		29A374442F796B120046F266 /* Exceptions for "RickyAndMorty" folder in "RickyAndMortyTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -56,6 +63,7 @@
 		29A3740F2F796AEF0046F266 /* RickyAndMorty */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				295BC71B2F95802100AC5905 /* Exceptions for "RickyAndMorty" folder in "RickyAndMorty" target */,
 				29A374442F796B120046F266 /* Exceptions for "RickyAndMorty" folder in "RickyAndMortyTests" target */,
 			);
 			path = RickyAndMorty;
@@ -426,6 +434,7 @@
 				DEVELOPMENT_TEAM = Q26KPJ9ZM2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RickyAndMorty/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -458,6 +467,7 @@
 				DEVELOPMENT_TEAM = Q26KPJ9ZM2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RickyAndMorty/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
