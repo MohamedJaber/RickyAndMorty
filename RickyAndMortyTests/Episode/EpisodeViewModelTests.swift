@@ -48,19 +48,14 @@ extension Episode {
         ]
     ) -> Self {
         .init(
-            id: 1, name: "Pilot", air_date: "December 2, 2013",
-            episode: "S01E01",
-            characters: ["https://rickandmortyapi.com/api/character/1",
-                         "https://rickandmortyapi.com/api/character/2"],
-            url: "", created: "")
+            characters: ["https://rickandmortyapi.com/api/character/1", "https://rickandmortyapi.com/api/character/2"], name: "Pilot", air_date: "December 2, 2013", episode: "S01E01", url: "", created: "", id: 1)
     }
 }
 
 extension EpisodeResponse {
     static func mock(count: Int = 1) -> Self {
         .init(
-            info: .init(pages: 1),
-            results: (1...count).map { Episode.mock(id: $0) }
+            results: (1...count).map { Episode.mock(id: $0) }, info: .init(pages: 1)
         )
     }
 }

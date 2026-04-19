@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum CharactersRoute: Hashable {
+fileprivate enum CharactersRoute: Hashable {
     case characterDetails(Character)
 }
 

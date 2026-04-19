@@ -145,10 +145,7 @@ struct EpisodeDetailView: View {
 
 #Preview {
     let episode = Episode(
-        id: 1, name: "Pilot", air_date: "December 2, 2013",
-        episode: "S01E01",
-        characters: ["https://rickandmortyapi.com/api/character/1",
-                     "https://rickandmortyapi.com/api/character/2"],
-        url: "", created: "")
+        characters: ["https://rickandmortyapi.com/api/character/1", "https://rickandmortyapi.com/api/character/2"], name: "Pilot", air_date: "December 2, 2013", episode: "S01E01", url: "", created: "", id: 1)
+
     EpisodeDetailView(viewModel: EpisodeDetailViewModel(episode: episode, network: NetworkService()), episode: episode)
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum EpisodesRoute: Hashable {
+fileprivate enum EpisodesRoute: Hashable {
     case episodeDetails(Episode)
 }
 

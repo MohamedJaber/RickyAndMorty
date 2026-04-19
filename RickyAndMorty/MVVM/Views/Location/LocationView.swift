@@ -7,25 +7,31 @@
 
 import SwiftUI
 
+fileprivate enum LocationsRoute: Hashable {
+    case LocationDetails(Location)
+}
+
 struct LocationsListView: View {
     @State private var vm = LocationsViewModel(network: NetworkService())
+    @State private var path: [LocationsRoute] = []
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             Group {
                 if vm.locations.isEmpty && vm.isLoading {
                     ProgressView("Loading locations...")
                 } else {
                     List {
                         ForEach(vm.locations) { location in
-                            NavigationLink(value: location.id) {
-                                LocationRow(location: location)
-                            }
-                            .onAppear {
-                                Task {
-                                    await vm.loadMoreIfNeeded(currentLocation: location)
+                            LocationRow(location: location)
+                                .onTapGesture {
+                                    path.append(.LocationDetails(location))
                                 }
-                            }
+                                .onAppear {
+                                    Task {
+                                        await vm.loadMoreIfNeeded(currentLocation: location)
+                                    }
+                                }
                         }
 
                         if vm.isLoading && !vm.locations.isEmpty {
@@ -42,8 +48,11 @@ struct LocationsListView: View {
                 }
             }
             .navigationTitle("Locations")
-            .navigationDestination(for: Int.self) { locationID in
-                LocationDetailsView(locationID: locationID)
+            .navigationDestination(for: Int.self) { route in
+                switch route {
+                case .LocationDetails(let character):
+                    LocationDetailsView(locationID: locationID)
+                }
             }
             .alert("Error", isPresented: .constant(vm.errorMessage != nil), presenting: vm.errorMessage) { _ in
                 Button("OK") { vm.errorMessage = nil }

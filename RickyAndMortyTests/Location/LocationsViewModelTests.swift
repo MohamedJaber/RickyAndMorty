@@ -48,13 +48,13 @@ extension Location {
         ]
     ) -> Self {
         .init(
-            id: 1,
+            residents: residents,
             name: "Ricky",
             type: "Earth",
             dimension: "Planet",
-            residents: residents,
             url: "https://rickandmortyapi.com/api/character/1",
-            created: ""
+            created: "",
+            id: 1
         )
     }
 }
@@ -62,10 +62,10 @@ extension Location {
 extension LocationResponse {
     static func mock(count: Int = 1, hasNext: Bool = false) -> Self {
         .init(
+            results: (1...count).map { Location.mock(id: $0) },
             info: .init(
                 next: hasNext ? "next-page-url" : nil, pages: 1,
-            ),
-            results: (1...count).map { Location.mock(id: $0) }
+            )
         )
     }
 }

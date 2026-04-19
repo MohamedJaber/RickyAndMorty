@@ -71,6 +71,6 @@ extension CharacterResponse {
 
 extension Character {
     static func mock(id: Int = 1) -> Self {
-        .init(id: 38, name: "Beth Smith", status: "Alive", species: "Human", type: "", gender: "Female", origin: Character.NamedResource(name: "Earth (C-137)", url: "https://rickandmortyapi.com/api/location/1"), location: Character.NamedResource(name: "Earth (C-137)", url: "https://rickandmortyapi.com/api/location/1"), image: "https://rickandmortyapi.com/api/character/avatar/38.jpeg", episode: [], url:  "https://rickandmortyapi.com/api/character/38", created: "2017-11-05T09:48:44.230Z")
+        .init(episode: [], origin: Character.NamedResource(name: "Earth (C-137)", url: "https://rickandmortyapi.com/api/location/1"), location: Character.NamedResource(name: "Earth (C-137)", url: "https://rickandmortyapi.com/api/location/1"), name: "Beth Smith", status: "Alive", species: "Human", type: "", gender: "Female", image: "https://rickandmortyapi.com/api/character/avatar/38.jpeg", url:  "https://rickandmortyapi.com/api/character/38", created: "2017-11-05T09:48:44.230Z", id: 38)
     }
 }

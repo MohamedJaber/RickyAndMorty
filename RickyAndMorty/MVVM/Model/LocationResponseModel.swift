@@ -15,7 +15,7 @@ struct Info: Codable {
     let pages: Int
 }
 
-struct Location: Codable, Identifiable, Equatable, Sendable {
+struct Location: Codable, Identifiable, Equatable, Sendable, Hashable {
     let residents: [String]
     let name: String
     let type: String
