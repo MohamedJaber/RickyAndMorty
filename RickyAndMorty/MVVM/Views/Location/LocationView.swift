@@ -8,7 +8,7 @@
 import SwiftUI
 
 fileprivate enum LocationsRoute: Hashable {
-    case LocationDetails(Location)
+    case LocationDetails(Int)
 }
 
 struct LocationsListView: View {
@@ -25,7 +25,7 @@ struct LocationsListView: View {
                         ForEach(vm.locations) { location in
                             LocationRow(location: location)
                                 .onTapGesture {
-                                    path.append(.LocationDetails(location))
+                                    path.append(.LocationDetails(location.id))
                                 }
                                 .onAppear {
                                     Task {
@@ -48,9 +48,9 @@ struct LocationsListView: View {
                 }
             }
             .navigationTitle("Locations")
-            .navigationDestination(for: Int.self) { route in
+            .navigationDestination(for: LocationsRoute.self) { route in
                 switch route {
-                case .LocationDetails(let character):
+                case .LocationDetails(let locationID):
                     LocationDetailsView(locationID: locationID)
                 }
             }

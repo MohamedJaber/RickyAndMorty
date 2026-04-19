@@ -53,11 +53,11 @@ final class LocationDetailViewModel {
                             let character: Character = try await self.network.fetch(.fetchCharacter(urlString: url))
 
                             return ResidentDisplay(
-                                id: character.id,
                                 name: character.name,
                                 originName: character.origin.name.isEmpty ? "Unknown" : character.origin.name,
                                 lastSeenName: character.location.name.isEmpty ? "Unknown" : character.location.name,
-                                image: character.image
+                                image: character.image,
+                                id: character.id
                             )
                         } catch {
                             debugPrint("Failed to load resident at \(url): \(error)")
