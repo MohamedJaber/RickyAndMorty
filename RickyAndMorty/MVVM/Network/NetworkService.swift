@@ -64,7 +64,7 @@ actor NetworkService: NetworkServiceProtocol {
         }
     }
 
-    // MARK: - Core Data Fetching
+    // MARK: - Data Fetching
 
     private func fetchData(from url: URL) async throws -> Data {
 
